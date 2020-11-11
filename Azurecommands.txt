@@ -1,0 +1,2 @@
+az acr create --name SEIRDAppRegistry --resource-group covid-19-seird-ak-rg --sku basic --admin-enabled true
+az acr build --registry SEIRDAppRegistry --resource-group covid-19-seird-ak-rg --image  SEIRD-app
