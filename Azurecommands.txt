@@ -1,2 +1,9 @@
-az acr create --name SEIRDAppRegistry --resource-group covid-19-seird-ak-rg --sku basic --admin-enabled true
-az acr build --registry SEIRDAppRegistry --resource-group covid-19-seird-ak-rg --image  SEIRD-app
+az acr create --name AKSEIRDAppRegistry --resource-group app-SEIRD-AK  --sku basic --admin-enabled true
+
+az acr build --image ak-seird-app:v1 --registry AKSEIRDAppRegistry  --file Dockerfile .
+
+az appservice plan create  -n AKAppServicePlan --resource-group app-SEIRD-AK -l eastus --is-linux --sku F1
+#az group create -n AzuredemoRG -l "East US"
+az webapp create -g app-SEIRD-AK -p AKAppServicePlan -n ak-seird-app -i AKSEIRDAppRegistry.azurecr.io/ak-seird-app:latest
+
+az acr build --registry AKSEIRDAppRegistry --resource-group app-SEIRD-AK --image ak-seird-app .
