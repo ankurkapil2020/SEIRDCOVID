@@ -68,7 +68,7 @@ runOnSave = false
 
 # The port where the server will listen for client and browser connections.
 # Default: 8000
-port = 8000
+port = 80
 
 # Enables support for Cross-Origin Request Sharing, for added security.
 # Default: true
@@ -79,7 +79,7 @@ enableCORS = true
 
 # Internet address of the server server that the browser should connect to. Can be IP address or DNS name.
 # Default: 'localhost'
-serverAddress = "0.0.0.0"
+serverAddress = "127.127.0.1"
 
 # Whether to send usage statistics to Streamlit.
 # Default: true
