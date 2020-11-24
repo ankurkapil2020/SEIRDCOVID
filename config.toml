@@ -45,7 +45,7 @@ installTracer = false
 # Sets the MPLBACKEND environment variable to Agg inside Streamlit to prevent Python crashing.
 # Default: true
 #fixMatplotlib = true
-fixPlotly = true
+#fixPlotly = true
 
 [server]
 
